@@ -1,8 +1,8 @@
 import React from 'react';
-import Statistics from './Statistics';
+import Statistics from '../Statistics/Statistics';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
-import Notification from 'components/Notification';
-import '../FeedbackWidget/FeedbackWidget.css';
+import Notification from 'components/Notification/Notification';
+import css from './FeedbackWidget.module.css';
 
 class FeedbackWidget extends React.Component {
   state = {
@@ -35,15 +35,15 @@ class FeedbackWidget extends React.Component {
     const feedbackOptions = ['good', 'neutral', 'bad'];
 
     return (
-      <div className="Container">
-        <div className="Title">
+      <div className={css.Container}>
+        <div className={css.Title}>
           <h2>Please leave feedback</h2>
           <FeedbackOptions
             options={feedbackOptions}
             onLeaveFeedback={this.handleFeedback}
           />
         </div>
-        <div className="Title">
+        <div className={css.Title}>
           <h2>Statistics</h2>
           {total ? (
             <Statistics
